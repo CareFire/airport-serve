@@ -1,0 +1,6 @@
+{
+  "backgroundColor": "red",
+  "usingComponents": {
+    "van-button": "/static/vant-weapp/dist/button/index"
+  }
+}
