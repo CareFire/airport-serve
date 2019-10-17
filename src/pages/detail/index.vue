@@ -7,17 +7,36 @@
                 </swiper-item>
             </block>
         </swiper>
-
-        <ul class="container log-list">
-            <li v-for="(log, index) in logs" :class="{ red: aa }" :key="index" class="log-item">
-                <card :text="(index + 1) + ' . ' + log"></card>
-            </li>
-        </ul>
+        <div class="choice-div">
+            <div class="div-inline">
+                <p>1元</p>
+                <p>4次</p>
+            </div>
+            <div class="div-inline">
+                <p>1元</p>
+                <p>4次</p>
+            </div>
+            <div class="div-inline">
+                <p>1元</p>
+                <p>4次</p>
+            </div>
+            <div class="div-inline">
+                <p>1元</p>
+                <p>4次</p>
+            </div>
+            <div class="div-inline">
+                <p>1元</p>
+                <p>4次</p>
+            </div>
+            <div class="div-inline">
+                <p>1元</p>
+                <p>4次</p>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-  import { formatTime } from '@/utils/index'
   import card from '@/components/card'
 
   export default {
@@ -29,33 +48,34 @@
       return {
         logs: [],
         imgUrls: [
-          'http://mss.sankuai.com/v1/mss_51a7233366a4427fa6132a6ce72dbe54/newsPicture/05558951-de60-49fb-b674-dd906c8897a6',
-          'http://mss.sankuai.com/v1/mss_51a7233366a4427fa6132a6ce72dbe54/coursePicture/0fbcfdf7-0040-4692-8f84-78bb21f3395d',
-          'http://mss.sankuai.com/v1/mss_51a7233366a4427fa6132a6ce72dbe54/management-school-picture/7683b32e-4e44-4b2f-9c03-c21f34320870'
+          '/static/images/houjidating.png'
         ]
       }
     },
 
     created () {
-      let logs
-      if (mpvuePlatform === 'my') {
-        logs = mpvue.getStorageSync({key: 'logs'}).data || []
-      } else {
-        logs = mpvue.getStorageSync('logs') || []
-      }
-      this.logs = logs.map(log => formatTime(new Date(log)))
+
     }
   }
 </script>
 
 <style>
-    .log-list {
-        display: flex;
-        flex-direction: column;
-        padding: 40rpx;
-    }
+.choice-div {
+    width: 100%;
+    height:140rpx;
+}
+.div-inline{
+    width:25%;
+    height: 140rpx;
+    float: left;
+    margin: 10rpx 4.16%;
+    box-sizing: border-box;
+    border:1rpx solid black;
+    border-radius: 10rpx;
+}
 
-    .log-item {
-        margin: 10rpx;
-    }
+.div-inline p {
+    text-align: center;
+    line-height: 70rpx;
+}
 </style>
