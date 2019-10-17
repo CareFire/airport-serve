@@ -1,6 +1,8 @@
 {
   "backgroundColor": "red",
   "usingComponents": {
-    "van-button": "/static/vant-weapp/dist/button/index"
+    "van-button": "/static/vant-weapp/dist/button/index",
+    "van-button": "/static/vant-weapp/dist/col/index",
+    "van-button": "/static/vant-weapp/dist/row/index"
   }
 }
