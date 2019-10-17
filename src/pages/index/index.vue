@@ -1,11 +1,7 @@
 <template>
   <div class="wrapper">
     <image class="head-image gray" src="/static/images/vipcard.png"/>
-    <van-row type="flex" justify="center">
-      <van-col span="6">span: 6</van-col>
-      <van-col span="6">span: 6</van-col>
-      <van-col span="6">span: 6</van-col>
-    </van-row>
+    <van-button type="primary">主要按钮</van-button>
   </div>
 </template>
 
