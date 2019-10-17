@@ -1,6 +1,8 @@
 <template>
   <div class="wrapper">
-    <image class="head-image gray" src="/static/images/vipcard.png"/>
+    <div id="active-card-div" style="background-image: url('/static/images/vipcard.png');">
+      <p>点击激活会员卡</p>
+    </div>
     <div id="notice-div">
       <div class="notice-middle-div">
         <p>剩余次数</p>
@@ -37,11 +39,7 @@ export default {
 .wrapper {
   padding: 20rpx;
 }
-.head-image {
-  width:100%;
-  height: 400rpx;
-  border-radius:3%;
-}
+
 .gray {
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
@@ -49,6 +47,18 @@ export default {
   -o-filter: grayscale(100%);
   filter: grayscale(100%);
   filter: gray;
+}
+
+#active-card-div {
+  width:100%;
+  height:400rpx;
+  text-align:center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#active-card-div p {
+  line-height: 400rpx;
 }
 
 #notice-div {
