@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div id="active-card-div" style="background-image: url('/static/images/vipcard.png');">
-      <p>点击激活会员卡</p>
+      <p @click="onRoute()">点击激活会员卡</p>
     </div>
     <div id="notice-div">
       <div class="notice-middle-div">
@@ -28,6 +28,9 @@ export default {
     card
   },
   methods: {
+    onRoute () {
+      wx.navigateTo({ url: '/pages/detail/main' })
+    }
   },
   created () {
 
