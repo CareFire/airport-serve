@@ -3,6 +3,7 @@
     "pages/index/main",
     "pages/logs/main",
     "pages/detail/main",
+    "pages/checkout_index/main",
     "pages/counter/main"
   ],
   "window": {

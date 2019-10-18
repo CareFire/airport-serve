@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     onRoute () {
-      wx.navigateTo({ url: '/pages/detail/main' })
+      wx.navigateTo({ url: '/pages/checkout_index/main' })
     },
     authSetUser (e) {
       this.userInfo = e.mp.detail.userInfo
