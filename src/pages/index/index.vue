@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="indexContainer">
     <div id="active-card-div" style="background-image: url('/static/images/vipcard.png');">
       <div class="userinfo" v-if="userInfo.nickName">
         <img class="userinfo-avatar" :src="userInfo.avatarUrl"/>
@@ -62,9 +62,14 @@ export default {
 }
 </script>
 
-<style scoped>
-.wrapper {
-  padding: 20rpx;
+<style>
+page {
+  background: #ffffff;
+}
+.indexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .userinfo-avatar {
@@ -84,8 +89,10 @@ export default {
   color: white;
 }
 #active-card-div {
-  width:100%;
+  width:96%;
   height:400rpx;
+  margin:10rpx auto;
+  border-radius: 10rpx;
   text-align:center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -106,6 +113,6 @@ export default {
   text-align: center;
   box-sizing: border-box;
   border: 1rpx solid #ddd;
-  border-radius: 5%;
+  border-radius: 10rpx;
 }
 </style>

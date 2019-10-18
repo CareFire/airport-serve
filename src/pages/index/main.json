@@ -1,5 +1,6 @@
 {
-  "backgroundColor": "red",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "会员权益",
   "usingComponents": {
     "van-button": "/static/vant-weapp/dist/button/index"
   }
