@@ -103,7 +103,7 @@ page {
 }
 
 #notice-div {
-  width: 100%;
+  width: 96%;
 }
 
 .notice-middle-div {
@@ -112,7 +112,7 @@ page {
   float: left;
   text-align: center;
   box-sizing: border-box;
-  border: 1rpx solid #ddd;
+  border: 5rpx solid #ddd;
   border-radius: 10rpx;
 }
 </style>
