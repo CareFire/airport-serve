@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     onRoute () {
-      wx.navigateTo({ url: '/pages/checkout_index/main' })
+      wx.navigateTo({ url: '/pages/detail/main' })
     },
     authSetUser (e) {
       this.userInfo = e.mp.detail.userInfo
@@ -49,6 +49,11 @@ export default {
         success (res) {
           console.log(res)
           _this.userInfo = res.userInfo
+          // 次数判断是否为核销人员
+          if (res.userInfo.nickName === 'zhaotl') {
+            // console.log('是核销人员 跳转到核销人员首页')
+            // wx.reLaunch({ url: '/pages/checkout_index/main' })
+          }
         },
         fail (err) {
           console.log(err)
