@@ -52,7 +52,8 @@
 
 <style>
 img {
-    width: 100%;
+    width: 96%;
+    margin:0 2%;
 }
 .choice-div {
     width: 100%;
