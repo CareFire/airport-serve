@@ -1,12 +1,6 @@
 <template>
     <div>
-        <swiper v-if="imgUrls.length > 0" indidator-dots="imgUrls.length > 1" >
-            <block v-for="(item, index) in imgUrls" :key="index" >
-                <swiper-item>
-                    <image :src="item" mode="scaleToFill"></image>
-                </swiper-item>
-            </block>
-        </swiper>
+        <img src="/static/images/houjidating.png" alt="">
         <div class="choice-div">
             <div class="div-inline">
                 <p>1元</p>
@@ -46,10 +40,7 @@
 
     data () {
       return {
-        logs: [],
-        imgUrls: [
-          '/static/images/houjidating.png'
-        ]
+        logs: []
       }
     },
 
@@ -60,6 +51,9 @@
 </script>
 
 <style>
+img {
+    width: 100%;
+}
 .choice-div {
     width: 100%;
     height:140rpx;
