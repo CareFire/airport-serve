@@ -49,11 +49,16 @@ export default {
         success (res) {
           console.log(res)
           _this.userInfo = res.userInfo
-          // 次数判断是否为核销人员
-          if (res.userInfo.nickName === 'zhaotl') {
-            // console.log('是核销人员 跳转到核销人员首页')
-            // wx.reLaunch({ url: '/pages/checkout_index/main' })
-          }
+          wx.setStorage({
+            key: 'user_info',
+            data: res.userInfo,
+            success: function () {
+              console.log('写入userInfo缓存成功')
+            },
+            fail: function () {
+              console.log('写入userInfo发生错误')
+            }
+          })
         },
         fail (err) {
           console.log(err)

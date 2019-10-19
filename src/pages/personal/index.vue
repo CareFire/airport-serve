@@ -1,23 +1,13 @@
 <template>
-  <div>
-      <swiper v-if="imgUrls.length > 0" indidator-dots="imgUrls.length > 1" >
-      <block v-for="(item, index) in imgUrls" :key="index" >
-        <swiper-item>
-          <image :src="item" mode="scaleToFill"></image>
-        </swiper-item>
-      </block>
-    </swiper>
-
-    <ul class="container log-list">
-      <li v-for="(log, index) in logs" :class="{ red: aa }" :key="index" class="log-item">
-        <card :text="(index + 1) + ' . ' + log"></card>
-      </li>
-    </ul>
+  <div class="indexContainer">
+    <div class="userinfo" v-if="userInfo.nickName">
+      <img class="userinfo-avatar" :src="userInfo.avatarUrl"/>
+      <span>{{userInfo.nickName}}</span>
+    </div>
   </div>
 </template>
 
 <script>
-import { formatTime } from '@/utils/index'
 import card from '@/components/card'
 
 export default {
@@ -27,35 +17,59 @@ export default {
 
   data () {
     return {
-      logs: [],
-      imgUrls: [
-        'http://mss.sankuai.com/v1/mss_51a7233366a4427fa6132a6ce72dbe54/newsPicture/05558951-de60-49fb-b674-dd906c8897a6',
-        'http://mss.sankuai.com/v1/mss_51a7233366a4427fa6132a6ce72dbe54/coursePicture/0fbcfdf7-0040-4692-8f84-78bb21f3395d',
-        'http://mss.sankuai.com/v1/mss_51a7233366a4427fa6132a6ce72dbe54/management-school-picture/7683b32e-4e44-4b2f-9c03-c21f34320870'
-      ]
+      userInfo: {}
     }
   },
-
-  created () {
-    let logs
-    if (mpvuePlatform === 'my') {
-      logs = mpvue.getStorageSync({key: 'logs'}).data || []
-    } else {
-      logs = mpvue.getStorageSync('logs') || []
+  methods: {
+    getUserInfo () {
+      var _this = this
+      wx.getStorage({
+        key: 'user_info',
+        success: function (r) {
+          console.log(11122233)
+          console.log(r.data)
+          _this.userInfo = r.data
+        },
+        fail: function () {
+          console.log('读取user_key发生错误')
+        }
+      })
     }
-    this.logs = logs.map(log => formatTime(new Date(log)))
+  },
+  created () {
+    this.getUserInfo()
   }
 }
 </script>
 
 <style>
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
-}
+  page {
+    background: #ffffff;
+  }
+  .indexContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.log-item {
-  margin: 10rpx;
-}
+  .userinfo-avatar {
+    width:100rpx;
+    height: 100rpx;
+    position:absolute;
+    left:30rpx;
+    top:30rpx;
+    border-radius:50%;
+  }
+
+  .userinfo span {
+    position: absolute;
+    left: 145rpx;
+    top: 45rpx;
+    font-size: 30rpx;
+    color: black;
+  }
+
+  #active-card-div p {
+    line-height: 400rpx;
+  }
 </style>
