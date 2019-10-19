@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
+    "pages/personal/main",
     "pages/detail/main",
     "pages/checkout_index/main",
     "pages/counter/main"
@@ -25,7 +25,7 @@
       "selectedIconPath": "static/tabs/home-active.png"
     }, {
       "text": "个人中心",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/personal/main",
       "iconPath": "static/tabs/orders.png",
       "selectedIconPath": "static/tabs/orders-active.png"
     }],
@@ -37,7 +37,7 @@
       "activeIcon": "static/tabs/home-active.png"
     }, {
       "name": "个人中心",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/personal/main",
       "icon": "static/tabs/orders.png",
       "activeIcon": "static/tabs/orders-active.png"
     }],
